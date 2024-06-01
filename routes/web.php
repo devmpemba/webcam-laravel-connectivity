@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WebcamController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('webcam', [WebcamController::class, 'index']);
+Route::post('webcam', [WebcamController::class, 'store'])->name('webcam.capture');
