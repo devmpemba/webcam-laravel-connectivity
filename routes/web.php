@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\WebcamController;
 use Illuminate\Support\Facades\Route;
+use SalimMbise\TanzaniaRegions\TanzaniaRegions;
+use App\Http\Controllers\RegionController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +23,18 @@ Route::get('/', function () {
 
 Route::get('webcam', [WebcamController::class, 'index']);
 Route::post('webcam', [WebcamController::class, 'store'])->name('webcam.capture');
+
+
+Route::get('/regions', [RegionController::class, 'getRegions']);
+
+Route::get('/regionsDistricts', [RegionController::class, 'getRegionsDistricts']);
+
+Route::get('/districtSingle', [RegionController::class, 'getDistrictsSingle']);
+
+Route::get('/wards', [RegionController::class, 'getWards']);
+
+Route::get('/all', [RegionController::class, 'getAllRegions']);
+
+
+
+
